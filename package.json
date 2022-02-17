@@ -1,0 +1,25 @@
+{
+  "name": "puppet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon crabada-crawler.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-schedule": "^2.1.0",
+    "nodemon": "^2.0.15",
+    "puppeteer": "^13.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l-ilves/crab-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/l-ilves/crab-bot/issues"
+  },
+  "homepage": "https://github.com/l-ilves/crab-bot#readme",
+  "description": ""
+}
