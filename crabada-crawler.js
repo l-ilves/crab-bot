@@ -1,17 +1,17 @@
 const puppeteer = require("puppeteer");
 const schedule = require('node-schedule');
 
-const rootUrl = "https://play.crabada.com/";
+const rootUrl = "https://beta.defikingdoms.com/#/professions";
 
 const getMiningExpeditionHTML = async (page) => {
-  await page.goto(`${rootUrl}/mine`, {waitUntil:"networkidle2"});
-  
-  console.log('test 3')
+  await page.goto(`${rootUrl}/#/professions`, {waitUntil:"networkidle2"});
 
   return ( results = await page.evaluate(() => {
       
+  
+  console.log('test 3')
     console.log('test 4')
-    const buttons = document.querySelectorAll(".btn", {waitUntil: 'networkidle2'});
+    const buttons = document.querySelectorAll(".miner-clickbox", {waitUntil: 'networkidle2'});
     const miningExpedition = document.querySelector(".ant-modal-close", {waitUntil: 'networkidle2'}).click();
     return Array.from(buttons).map(item => {
       return item.innerHTML;
@@ -30,7 +30,9 @@ const startMiningExpedition = async() => {
   console.log('test 5')
   console.log('this is miningExpedition -> ', miningExpedition)
 
+	setTimeout(function2, 15000);
   await browser.close();
+
   return null;
 }
 
