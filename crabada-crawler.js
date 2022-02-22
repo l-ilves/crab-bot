@@ -1,19 +1,21 @@
 const puppeteer = require("puppeteer");
 const schedule = require('node-schedule');
 
-const rootUrl = "https://beta.defikingdoms.com/#/professions";
+const rootUrl = "https://beta.defikingdoms.com";
 
 const getMiningExpeditionHTML = async (page) => {
-  await page.goto(`${rootUrl}/#/professions`, {waitUntil:"networkidle2"});
+  await page.goto(`${rootUrl}`, {waitUntil:"networkidle2"});
+  console.log('test 3, this is rootURL -> ', rootUrl);
 
-  return ( results = await page.evaluate(() => {
-      
-  
-  console.log('test 3')
+  return ( results = await page.evaluate(() => { // if(!results) ... (https://stackoverflow.com/questions/55467333/evaluation-failed-error-in-puppeteer-error-handling)
+      setTimeout(function2, 15000);  
     console.log('test 4')
-    const buttons = document.querySelectorAll(".miner-clickbox", {waitUntil: 'networkidle2'});
-    const miningExpedition = document.querySelector(".ant-modal-close", {waitUntil: 'networkidle2'}).click();
-    return Array.from(buttons).map(item => {
+    const button = document.querySelector("#connect-wallet", {waitUntil: 'networkidle2'});
+    const miningExpedition = button.click();
+	setTimeout(function2, 15000);
+
+const links = document.querySelectorAll(".sc-exAgwC", {waitUntil: 'networkidle2'});
+    return Array.from(links).map(item => {
       return item.innerHTML;
     })
   }))
